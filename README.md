@@ -7,10 +7,10 @@ We used to do this:
 
 ```
 self.view.addConstraint(
-            NSLayoutConstraint(
+        NSLayoutConstraint(
                 item: view1, attribute: .Right, relatedBy: .Equal, toItem: view2, attribute: .Left, multiplier: 1, constant: 0
-            )
         )
+)
 ```
 
 Now, we can achieve the same using layout anchors:
@@ -29,7 +29,7 @@ As you can see, I have taken one step further to shorten the form.
 
 `.eq`, `.ge`, and `.le` stands for equals, greater than or equals, and less than or equals respectively. 
 
-All available layout properties are prefixed with p. For example, `pRight` stands for property right.
+All available layout properties are prefixed with p. For example, `pRight` stands for the right layout property.
 
 The following properties are available:
 
@@ -55,14 +55,14 @@ Normally, we would create a layout guide like this:
 ```
 let guide = UILayoutGuide()
 self.addLayoutGuide(guide)
-return guide
 ```
 
-Using this extension, we do the following:
+Using this extension, we create and add the guide to `view` by writing the following:
 
 ```
 let guide = view.addSupportedLayoutGuide()
 ```
+
 `addSupportedLayoutGuide()` is an added method on UIView which returns an instance conforming to `LayoutSupport` protocol. The `LayoutSupport` protocol exposes the `pHeight`,`pLeft`, etc properties
 
 For iOS 9 and above, a UILayoutGuide is returned.
