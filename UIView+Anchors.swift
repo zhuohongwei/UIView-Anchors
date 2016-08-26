@@ -94,6 +94,11 @@ protocol LayoutSupport: class {
     var pWidth: LayoutProperty { get }
     var pHeight: LayoutProperty { get }
 
+    var pLeadingMargin: LayoutProperty { get }
+    var pTrailingMargin: LayoutProperty { get }
+    var pTopMargin: LayoutProperty { get }
+    var pBottomMargin: LayoutProperty { get }
+    
 }
 
 extension UIView {
@@ -159,6 +164,22 @@ extension UIView: LayoutSupport {
     var pHeight: LayoutProperty {
         return LayoutProperty(item: self, attribute: .Height)
     }
+    
+    var pLeadingMargin: LayoutProperty {
+        return LayoutProperty(item: self, attribute: .LeadingMargin)
+    }
+
+    var pTrailingMargin: LayoutProperty {
+        return LayoutProperty(item: self, attribute: .TrailingMargin)
+    }
+
+    var pTopMargin: LayoutProperty {
+        return LayoutProperty(item: self, attribute: .TopMargin)
+    }
+
+    var pBottomMargin: LayoutProperty {
+        return LayoutProperty(item: self, attribute: .BottomMargin)
+    }
 
 }
 
@@ -205,5 +226,21 @@ extension UILayoutGuide: LayoutSupport {
         return LayoutProperty(item: self, attribute: .Height)
     }
 
+    var pLeadingMargin: LayoutProperty {
+        return LayoutProperty(item: self, attribute: .LeadingMargin)
+    }
+
+    var pTrailingMargin: LayoutProperty {
+        return LayoutProperty(item: self, attribute: .TrailingMargin)
+    }
+
+    var pTopMargin: LayoutProperty {
+        return LayoutProperty(item: self, attribute: .TopMargin)
+    }
+
+    var pBottomMargin: LayoutProperty {
+        return LayoutProperty(item: self, attribute: .BottomMargin)
+    }
+    
 }
 
